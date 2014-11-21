@@ -49,8 +49,8 @@ $(document).ready(function(e){
 
 
     });
-   var  availibletype = [];
-   var availibleTech =[];
+     var  availibletype = [];
+     var availibleTech =[];
      $("#types").ready(function(){
 
 
@@ -67,18 +67,15 @@ $(document).ready(function(e){
                 error:function(xhr,textStatus,errorThrown){
                     alert(errorThrown);
                 }
-
-            });
-
-
+         });
     });
 
-    $("#types").autocomplete({
+    $("#TaskType").autocomplete({
         source: availibletype
 
     });
 
-    $("#technology").ready(function(){
+    $("#TaskTechnology").ready(function(){
 
 
         $.ajax({
@@ -97,11 +94,27 @@ $(document).ready(function(e){
 
         });
 
+    });
+
+    $("#TaskTechnology").autocomplete({
+        source: availibleTech
 
     });
 
-    $("#technology").autocomplete({
-        source: availibleTech
+    $("#SearchForm").submit(function(){
+
+        var type = $.trim($("#TaskType").val());
+        var technology = $.trim($('#TaskTechnology').val());
+
+        if(type.length === 0 && technology.length === 0){
+            alert('Please enter any one field for search');
+            
+            return false;
+
+        }else{
+
+
+        }
 
     });
 
@@ -109,8 +122,9 @@ $(document).ready(function(e){
 </script>
 
 <h1>List of Tasks</h1>
-<div style="" id="success"></div>
+
 <div class="col-lg-12">
+    <!-- ADD new task form -->
     <form method="post" id="TaskAddForm" name="TaskAddForm"  action="/tasks/add">
         <div class=" col-lg-2 form-group">
             <input name="data[Task][title]" id="TaskTitle" class="form-control" placeholder="Enter Title">
@@ -121,12 +135,14 @@ $(document).ready(function(e){
         </div>
 
     </form>
-    <form id="search" action="/tasks/listTasks" method="post">
+
+    <!-- SEARCH FORM -->
+    <form id="SearchForm" name="SearchForm" action="/tasks/listTasks" method="post">
     <div class="col-lg-2 form-group">
-        <input class="form-control" type="text" id="types" name="data[Task][Type]" placeholder="search by type" autocomplete="off"/>
+        <input class="form-control" type="text"  name="data[Task][Type]" id="TaskType" placeholder="search by type" autocomplete="off"/>
     </div>
     <div class="col-lg-2 form-group">
-        <input class="form-control" type="text" id="technology" name="data[Task][Technology]" placeholder="search by Technology"/>
+        <input class="form-control" type="text"  name="data[Task][Technology]" id="TaskTechnology" placeholder="search by Technology" autocomplete="off"/>
     </div>
     <div class="col-lg-2 form-group">
         <input class="btn btn-primary" type="submit" value="Search"/>
