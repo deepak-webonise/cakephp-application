@@ -35,56 +35,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 <?php echo $this->Html->link($cakeDescription, '#'); ?>
             </div>
             <ul class="nav navbar-nav navbar-right">
-            <?php if($this->Session->check('Auth.User')){ ?>
-
-                <li><?php echo $this->Html->link('Home','/') ?></li>
-                <li class="dropdown">
-                    <a href="tasks/" class="dropdown-toggle" data-toggle="dropdown">Tasks <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><?php echo $this->Html->link('List All',array('controller'=>'tasks','action'=>'listTasks')) ?></li>
-                        <li><?php echo $this->Html->link('Add',array('controller'=>'tasks','action'=>'add')) ?></li>
-
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="tasks/" class="dropdown-toggle" data-toggle="dropdown">Technologies <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><?php echo $this->Html->link('List All',array('controller'=>'technologies','action'=>'index')) ?></li>
-                        <li><?php echo $this->Html->link('Add',array('controller'=>'technologies','action'=>'add')) ?></li>
-
-                    </ul>
-                </li>
-
-                <?php
-                    }
-
-                    if($this->Session->read('Auth.User')){
-                        $user = $this->Session->read('Auth.User');
-
-                        echo '<li class="dropdown">';
-                        echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown">'.$user['User']['username'].'<span class="caret"></span></a>';
-                        echo '<ul class="dropdown-menu" role="menu">';
-
-                        echo '<li>';
-                        echo $this->Html->link('Dashboard',array('controller'=>'Users','action'=>'dashboard'));
-                        echo '</li>';
-
-
-                        echo '<li>';
-                        echo $this->Html->link('Logout',array('controller'=>'Users','action'=>'logout'));
-                        echo '</li>';
-
-                        echo '</ul></li>';
-
-                    }
-                    else{
-                        echo '<li>';
-                        echo $this->Html->link('Login',array('controller'=>'Users','action'=>'login'));
-                        echo '</li>';
-                    }
-
-                ?>
-
+                <?php  echo $this->element('menu');?>
             </ul>
 
 		</div>

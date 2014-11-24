@@ -24,9 +24,10 @@
                     url:formUrl,
                     data:formData,
                     success: function(data,textStatus,xhr){
-                        alert(data);
+                        alert('Successfully Updated.');
+                        window.location = '/tasks/listTasks';
                     },
-                    error: function(data,textStatus,xhr){
+                    error: function(xhr,textStatus,errorThrown){
                         alert('error');
 
                     }

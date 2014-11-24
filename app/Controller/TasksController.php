@@ -8,7 +8,7 @@
  */
 class TasksController extends AppController {
 
-    public $components = array('Paginator','RequestHandler');
+    public $components = array('Paginator','RequestHandler','RecentTasks');
 
     public $helpers = array('Html','Js','Form');
 
@@ -34,7 +34,7 @@ class TasksController extends AppController {
     public function listTasks(){
 
         $condition = array();
-        $condition = $this->returnSearchCondition();
+        $condition = $this->_returnSearchCondition();
 
         if(empty($this->passedArgs)){
 
@@ -46,10 +46,8 @@ class TasksController extends AppController {
 
         if($this->request->is('post')){
 
-            $condition = $this->returnSearchCondition();
-
+            $condition = $this->_returnSearchCondition();
             $this->Session->write('pgCondition',$condition);
-
             $this->paginate = array(
                 'limit' => 5,
                 'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name'),
@@ -92,7 +90,7 @@ class TasksController extends AppController {
 
         if($this->request->is('post')){
 
-            $condition = $this->returnSearchCondition();
+            $condition = $this->_returnSearchCondition();
 
             $this->Session->write('pgCondition',$condition);
 
@@ -135,7 +133,6 @@ class TasksController extends AppController {
             if(!empty($this->request->data)){
                 if($this->Task->addTask($this->request->data)){
 
-                   //$this->Task->getLastInsertedId();
                   echo "success";
 
                 }
@@ -169,6 +166,8 @@ class TasksController extends AppController {
         }
         if($this->request->is(array('ajax'))){
             if($this->Task->editTask($this->request->data)){
+                $this->layout='ajax';
+               // $this->render('/tasks/listTasks','ajax');
                 echo 'success';
 
             }
@@ -182,7 +181,6 @@ class TasksController extends AppController {
             $this->request->data = $task;
         }
     }
-
 
     /**
      * @param null $id
@@ -207,7 +205,6 @@ class TasksController extends AppController {
        }
     }
 
-
     /**
      * @param null $id
      * @throws MethodNotAllowedException
@@ -219,12 +216,12 @@ class TasksController extends AppController {
         }
         if($id){
             if($this->Task->deleteTask($id)){
-                $this->Session->setFlash('<p class="text-success">Task Deleted Successfully</p>');
-                return $this->redirect(array('action'=>'listTasks'));
+                $this->Session->setFlash('<p class="text-success text-center">Task Deleted Successfully</p>');
+                $this->redirect($this->referer());
             }
             else{
-                $this->Session->setFlash('<p class="text-success">Unsuccessfull to Delete</p>');
-                return $this->redirect(array('action'=>'listTasks'));
+                $this->Session->setFlash('<p class="text-danger text-center">Unsuccessful to Delete</p>');
+                $this->redirect($this->referer());
             }
         }
     }
@@ -233,9 +230,7 @@ class TasksController extends AppController {
      * @return mixed
      * Description : Return user selected criteria for filtering data.
      */
-
-
-    public function returnSearchCondition(){
+    public function _returnSearchCondition(){
 
         $condition = array();
         $user_id = $this->Auth->user('User.id');
@@ -251,8 +246,8 @@ class TasksController extends AppController {
         if(!empty($this->request->data['Task']['Technology'])){
             array_push($condition,"Technology.name LIKE '%".$this->request->data['Task']['Technology']."%'");
         }
-        if(!empty($this->request->data['created'])){
-            array_push($condition,"Task.created LIKE '".$this->request->data['created']." %' ");
+        if(!empty($this->request->data['Task']['created'])){
+            array_push($condition,"Task.created LIKE '".$this->request->data['Task']['created']." %' ");
         }
 
         return $condition;

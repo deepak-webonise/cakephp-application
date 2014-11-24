@@ -105,10 +105,12 @@ $(document).ready(function(e){
 
         var type = $.trim($("#TaskType").val());
         var technology = $.trim($('#TaskTechnology').val());
+        var created = $.trim($('#TaskCreated').val());
 
-        if(type.length === 0 && technology.length === 0){
+
+        if(type.length === 0 && technology.length === 0 && created === ''){
             alert('Please enter any one field for search');
-            
+
             return false;
 
         }else{
@@ -123,7 +125,7 @@ $(document).ready(function(e){
 
 <h1>List of Tasks</h1>
 
-<div class="col-lg-12">
+<div class="col-lg-12 te">
     <!-- ADD new task form -->
     <form method="post" id="TaskAddForm" name="TaskAddForm"  action="/tasks/add">
         <div class=" col-lg-2 form-group">
@@ -144,6 +146,9 @@ $(document).ready(function(e){
     <div class="col-lg-2 form-group">
         <input class="form-control" type="text"  name="data[Task][Technology]" id="TaskTechnology" placeholder="search by Technology" autocomplete="off"/>
     </div>
+        <div class="col-lg-2 form-group">
+            <input class="form-control" type="date"  name="data[Task][created]" id="TaskCreated" autocomplete="off"/>
+        </div>
     <div class="col-lg-2 form-group">
         <input class="btn btn-primary" type="submit" value="Search"/>
         <a class="resetButton btn-primary" href="/tasks/listTasks">Reset</a>

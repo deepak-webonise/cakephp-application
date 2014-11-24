@@ -19,12 +19,16 @@ class TechnologiesController extends AppController {
      */
 
     public function add(){
-        if($this->request->is('post')){
+
+        $this->layout = 'ajax';
+        $this->autoRender = false;
+        if($this->request->is('ajax')){
             if($this->Technology->addTechynology($this->request->data)){
-                $this->Session->setFlash('<p class="text-success">Successfully Added</p>');
-                $this->redirect(array('action'=>'index'));
+                echo 'success';
+            }else{
+                echo'fail';
             }
-            $this->Session->setFlash('<p class="text-danger">Unsuccessfull to save. Please Try again.</p>');
+
         }
 
     }

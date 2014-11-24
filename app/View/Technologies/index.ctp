@@ -13,17 +13,45 @@
 
             },
             submitHandler: function(form) {
-                form.submit();
+                var formData = $("#TechnologyAddForm").serialize();
+                alert(formData);
+                var formUrl = $("#TechnologyAddForm").attr('action');
+
+                $.ajax({
+                    url: formUrl,
+                    data: formData,
+                    type:'post',
+                    success:function(data,txtStatus,xhr){
+                        if(data == 'success'){
+                            alert('Successfully Added');
+                            window.location='technologies/index';
+                        }else{
+                            alert('Unsuccessful to add new technology');
+                        }
+                    },
+                    error:function(xhr,txtStatus,errorThrown){
+                        alert(errorThrown);
+
+                    }
+
+                });
             }
         });
     });
 </script>
-<h1>Technologies</h1>
- <form id="TechnologyAddForm" name="TechnologyAddForm">
-     <div class="form-control">
-         <input type="text" name="data[Technology][name] id="TechnologyName">
-     </div>
- </form>
+<h1>Categories</h1>
+ <div class="col-lg-12 form-group">
+     <form id="TechnologyAddForm" name="TechnologyAddForm" action="/technologies/add">
+         <div class="form-group col-lg-3">
+             <input class="form-control" type="text" name="data[Technology][name]" id="TechnologyName" placeholder="Enter Technology"/>
+         </div>
+         <div class="form-group col-lg-3">
+             <input type="submit" value="Add" class="btn btn-primary">
+         </div>
+     </form>
+
+ </div>
+
 <table class="table">
     <th>id</th>
     <th>Name</th>

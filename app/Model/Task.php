@@ -46,18 +46,24 @@ class Task extends AppModel {
      * @return array order by date
      * Description : return current date tasks
      */
-    public function taskByDate()
+    public function taskByDate($user_id = null)
     {
+        $conditions = array();
         $curDateObj = new DateTime();
         $curDateObj = $curDateObj->format('Y-m-d');
 
+        $conditions[0] = "created LIKE '".$curDateObj."%'";
+        if(!empty($user_id)){
+            $conditions[1] = 'user_id = '.$user_id;
+
+        }
+
         return $this->find('all',array(
             'recursive' => -1,
-            'conditions' => array("created LIKE '".$curDateObj."%'"),
+            'conditions' => $conditions,
             'fields' => array('id','title','created'),
             'order' => 'created desc',
             'limit' => 5
-
         ));
     }
 
@@ -116,8 +122,6 @@ class Task extends AppModel {
      * @return bool
      */
     public function addTask($data) {
-
-
 
         if(!empty($data)){
 

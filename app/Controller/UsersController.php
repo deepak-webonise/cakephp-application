@@ -99,30 +99,15 @@ class UsersController extends AppController {
        $user_id = $this->Auth->user('User.id');
 
        if($user_id == '1'){
-           $this->redirect(array('action' => 'adminDashboard'));
+           $this->redirect(array('controller'=>'admins','action' => 'dashboard'));
        }
 
        $this->loadModel('Task');
-       $this->set('todayTasks',$this->Task->taskByDate());
+       $this->set('todayTasks',$this->Task->taskByDate($user_id));
        $this->set('recentTasks',$this->Task->recentTasks($user_id));
 
 
     }
-
-    /*
-     * admin dashboard
-     */
-    public function adminDashboard(){
-
-        $this->loadModel('Task');
-        $this->set('todayTasks',$this->Task->taskByDate());
-        $this->set('recentTasks',$this->Task->recentTasks());
-
-
-    }
-
-
-
 
 }
 

@@ -49,31 +49,32 @@
         <th></th>
 
         <?php
+            if(!empty($recentTasks)){
 
-        $curdate = date('Y-m-d');
-        foreach($recentTasks as $task){
-            if($curdate != date("Y-m-d",strtotime($task['Task']['created']))){
-                echo '<tr><td><h4>'.date("Y-m-d",strtotime($task['Task']['created'])).'</h4><td></tr>';
-                $curdate = date("Y-m-d",strtotime($task['Task']['created']));
+                $curdate = date('Y-m-d');
+                foreach($recentTasks as $task){
+                    if($curdate != date("Y-m-d",strtotime($task['Task']['created']))){
+                        echo '<tr><td><h4>'.date("Y-m-d",strtotime($task['Task']['created'])).'</h4><td></tr>';
+                        $curdate = date("Y-m-d",strtotime($task['Task']['created']));
+                    }
+
+
+                    echo '<tr>';
+                    echo '<td>'.$this->Html->link($task['Task']['id'],array('controller'=>'tasks','action' => 'view',$task['Task']['id'])).'</td>';
+                    echo '<td>'.$this->Html->link($task['Task']['title'],array('action' => 'view',$task['Task']['id'])).'</td>';
+                    echo '<td>'.$task['Task']['created'].'</td>';
+                    if($this->Session->read('Auth.User')){
+                        echo '<td>'.$this->Html->link('Edit',array('controller'=>'tasks','action'=> 'edit',$task['Task']['id'])).'</td>';
+                        echo '<td>'.$this->Form->postLink('Delete',array('controller'=>'tasks','action' => 'delete',$task['Task']['id']),array('confirm'=>'Are you sure')).'</td>';
+
+                    }
+                }
+                echo $this->Html->link('Show All', array('controller'=>'tasks','action'=>'listTasks'),array('class'=>'resetButton btn-primary'));
             }
-
-
-            echo '<tr>';
-            echo '<td>'.$this->Html->link($task['Task']['id'],array('controller'=>'tasks','action' => 'view',$task['Task']['id'])).'</td>';
-            echo '<td>'.$this->Html->link($task['Task']['title'],array('action' => 'view',$task['Task']['id'])).'</td>';
-            echo '<td>'.$task['Task']['created'].'</td>';
-            if($this->Session->read('Auth.User')){
-                echo '<td>'.$this->Html->link('Edit',array('controller'=>'tasks','action'=> 'edit',$task['Task']['id'])).'</td>';
-                echo '<td>'.$this->Form->postLink('Delete',array('controller'=>'tasks','action' => 'delete',$task['Task']['id']),array('confirm'=>'Are you sure')).'</td>';
-
-            }
-
-
-        }
 
         ?>
     </table>
     <?php
-    echo $this->Html->link('Show All', array('controller'=>'tasks','action'=>'listTasks'),array('class'=>'btn'));
+
     ?>
 </div>
