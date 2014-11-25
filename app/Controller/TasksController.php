@@ -8,7 +8,7 @@
  */
 class TasksController extends AppController {
 
-    public $components = array('Paginator','RequestHandler','RecentTasks');
+    public $components = array('Paginator','RequestHandler','RecentTasks','Search.Prg');
 
     public $helpers = array('Html','Js','Form');
 
@@ -23,8 +23,6 @@ class TasksController extends AppController {
      * Description : categories the tasks by date and group
      */
     public function index(){
-        $result = $this->Task->taskByGroup();
-        //$data = Hash::combine($this->Task->taskByGroup(), '{n}.Task.created','{n}.0.task_count');
         $this->set('group',$this->Task->taskByGroup());
     }
 
@@ -33,16 +31,10 @@ class TasksController extends AppController {
      */
     public function listTasks(){
 
-        $condition = array();
         $condition = $this->_returnSearchCondition();
-
         if(empty($this->passedArgs)){
-
             $this->Session->write('pgCondition',$condition);
-
         }
-
-        // Setting search options
 
         if($this->request->is('post')){
 
@@ -52,8 +44,7 @@ class TasksController extends AppController {
                 'limit' => 5,
                 'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name'),
                 'conditions' => $condition,
-                'order' => 'Task.created desc',
-
+                'order' => 'Task.created desc'
             );
         }
 
@@ -62,8 +53,7 @@ class TasksController extends AppController {
                 'limit' => 5,
                 'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name'),
                 'conditions' => $this->Session->read('pgCondition'),
-                'order' => 'Task.created desc',
-
+                'order' => 'Task.created desc'
             );
         }
 
@@ -79,43 +69,36 @@ class TasksController extends AppController {
      */
     public function adminListTasks(){
 
-        $condition = array();
-
-        $technologies = $this->Task->Technology->find('list');
-        $this->set(compact('technologies'));
-
-        /*Load Types*/
-        $types = $this->Task->Type->find('list');
-        $this->set(compact('types'));
-
-        if($this->request->is('post')){
-
-            $condition = $this->_returnSearchCondition();
-
+        $condition = $this->_returnSearchCondition();
+        if(empty($this->passedArgs)){
             $this->Session->write('pgCondition',$condition);
+        }
 
+        // Setting search options
+        if($this->request->is('post')){
+            $condition = $this->_returnSearchCondition();
+            $this->Session->write('pgCondition',$condition);
             $this->paginate = array(
                 'limit' => 5,
-                'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name'),
+                'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name','User.username'),
                 'conditions' => $condition,
                 'order' => 'Task.created desc'
             );
-
+        }
+        if($this->request->is('get')){
+            $this->paginate = array(
+                'limit' => 5,
+                'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name','User.username'),
+                'conditions' => $this->Session->read('pgCondition'),
+                'order' => 'Task.created desc'
+            );
         }
 
-        $this->paginate = array(
-            'limit' => 5,
-            'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name','User.username'),
-            'conditions' => $condition,
-            'order' => 'Task.created desc',
-
-        );
         try{
             $this->set('tasksList',$this->paginate());
         }catch (NotFoundException $e){
-            $this->redirect(array('action'=>'listTasks'));
+            $this->redirect(array('action'=>'adminListTasks'));
         }
-
     }
 
     /**
@@ -124,17 +107,13 @@ class TasksController extends AppController {
     public function add(){
 
         $user_id = $this->Auth->user('User.id');
-
         $this->layout = 'ajax';
         $this->autoRender = false;
-
         if($this->request->is('ajax')){
             $this->request->data['Task']['user_id'] = $user_id;
             if(!empty($this->request->data)){
                 if($this->Task->addTask($this->request->data)){
-
                   echo "success";
-
                 }
                 else{
                     echo 'fail';
@@ -160,22 +139,18 @@ class TasksController extends AppController {
         $this->set(compact('types'));
 
         $task = $this->Task->findById($id);
-
         if(empty($task)){
             throw new NotFoundException(__('Invalid Task'));
         }
         if($this->request->is(array('ajax'))){
             if($this->Task->editTask($this->request->data)){
                 $this->layout='ajax';
-               // $this->render('/tasks/listTasks','ajax');
                 echo 'success';
-
             }
             else{
                 echo 'fail';
             }
         }
-
         if(empty($this->request->data))
         {
             $this->request->data = $task;
@@ -234,12 +209,9 @@ class TasksController extends AppController {
 
         $condition = array();
         $user_id = $this->Auth->user('User.id');
-
         if($user_id != '1'){
             array_push($condition,'Task.user_id = '.$user_id);
         }
-
-
         if(!empty($this->request->data['Task']['Type'])){
             array_push( $condition,"Type.name LIKE '%".$this->request->data['Task']['Type']."%'");
         }
@@ -249,9 +221,9 @@ class TasksController extends AppController {
         if(!empty($this->request->data['Task']['created'])){
             array_push($condition,"Task.created LIKE '".$this->request->data['Task']['created']." %' ");
         }
-
+        if(!empty($this->request->data['Task']['username'])){
+            array_push($condition,"User.username = '".$this->request->data['Task']['username']."' ");
+        }
         return $condition;
-
     }
-
 }

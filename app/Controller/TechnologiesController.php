@@ -8,8 +8,6 @@
  */
 class TechnologiesController extends AppController {
 
-
-
     public function index(){
        $this->set('technologies', $this->Technology->showAll());
     }
@@ -28,9 +26,7 @@ class TechnologiesController extends AppController {
             }else{
                 echo'fail';
             }
-
         }
-
     }
 
 
@@ -50,24 +46,18 @@ class TechnologiesController extends AppController {
             if($this->Technology->editTechnology($this->request->data)){
                 $this->Session->setFlash('<p class="text-success">Updated Successfully</p>');
                 $this->redirect(array('action'=>'index'));
-
             }
             $this->Session->setFlash('<p class="text-danger">Unsuccessful. Please Try once again.</p>');
         }
-
         if(empty($this->request->data)){
             $this->request->data = $tech;
         }
-
-
     }
-
 
     /**
      * @param null $id
      */
     public function delete($id = null){
-
 
         if($this->request->is('get')){
             $this->Session->setFlash('Invalid Operation');
@@ -81,9 +71,11 @@ class TechnologiesController extends AppController {
         }
         $this->Session->setFlash('<p class="text-danger">Technology Deleted Unsuccessfully</p>');
         $this->redirect(array('action'=>'index'));
-
     }
 
+    /**
+     * Autocomplete options for user.
+     */
     public function autoCompleteList(){
         $this->layout='ajax';
         $this->autoRender =false;

@@ -15,8 +15,8 @@ class UsersController extends AppController {
         parent::beforeFilter();
 
         $this->Auth->allow('index','logout','add');
-        $user = ClassRegistry::init('User');
-        $user->getEventManager()->attach(new UserListener());
+       // $user = ClassRegistry::init('User');
+        $this->User->getEventManager()->attach(new UserListener());
 
 
     }
@@ -101,7 +101,6 @@ class UsersController extends AppController {
        if($user_id == '1'){
            $this->redirect(array('controller'=>'admins','action' => 'dashboard'));
        }
-
        $this->loadModel('Task');
        $this->set('todayTasks',$this->Task->taskByDate($user_id));
        $this->set('recentTasks',$this->Task->recentTasks($user_id));

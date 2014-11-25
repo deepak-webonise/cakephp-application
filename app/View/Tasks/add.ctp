@@ -37,22 +37,6 @@ $(document).ready(function(e){
            }
        });
 
-      /*  $("#TaskAddForm").submit(function(){
-            var formData = $(this).serialize();
-
-            var formUrl = $(this).attr('action');
-            $.ajax({
-                type:'POST',
-                url:formUrl,
-                success: function(data,textStatus,xhr){
-                    alert('sucess');
-                },
-                error: function(data,textStatus,xhr){
-                    alert('fail');
-                 }
-            });
-            return false;
-        });*/
 });
 </script>
 <?php
@@ -99,24 +83,8 @@ $(document).ready(function(e){
                     echo $this->Form->input('type_id',array('class'=>'form-control','label'=>false,'name'=>'data[Task][type_id]'));
                 ?>
             </div>
-
-
        <?php
-
             echo $this->Form->submit('Add',array('class'=>'btn btn-primary'));
             echo $this->Form->end();
-
        ?>
     </div>
-
-
-<?php
-
-/*   echo $this->Form->create('Task');
-    echo $this->Form->input('title',array('div'=>array('class'=>'form-group')));
-    echo $this->Form->input('duration');
-    echo $this->Form->input('comments',array('rows'=>2));
-
-    echo $this->Form->input('type_id');
-    echo $this->Form->submit('Add',array('Formnovalidate'=>true));*/
-?>

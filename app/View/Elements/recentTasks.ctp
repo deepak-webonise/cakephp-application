@@ -40,8 +40,9 @@
 
     <?php
             echo $this->RecentTasks->recent($recentTasks);
+            echo '</table>';
         }else{
-            $data =  '<p class="text-danger">No records for today</p>';
+            echo '<p class="text-danger">No records for today</p>';
         }
 
     ?>

@@ -9,6 +9,7 @@
 
 class Task extends AppModel {
 
+
      /*public $validate = array(
          'title' => array(
              'rule' => array('minLength',4),

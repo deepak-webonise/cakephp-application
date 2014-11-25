@@ -46,8 +46,6 @@ $(document).ready(function(e){
             });
             return false;
         }
-
-
     });
      var  availibletype = [];
      var availibleTech =[];
@@ -76,7 +74,6 @@ $(document).ready(function(e){
     });
 
     $("#TaskTechnology").ready(function(){
-
 
         $.ajax({
             url:"/technologies/autoCompleteList",
@@ -115,7 +112,7 @@ $(document).ready(function(e){
 
         }else{
 
-
+            return true;
         }
 
     });
@@ -156,6 +153,7 @@ $(document).ready(function(e){
     </form>
 </div>
 <div  class="col-lg-12" >
+    <?php  echo $this->Paginator->options(array('url' => array('sort' => 'created','direction'=>'desc'))); ?>
     <table class="table">
         <tr id="data">
 
@@ -176,11 +174,8 @@ $(document).ready(function(e){
                 echo '<td>'.$task['Technology']['name'].'</td>';
                 echo '<td>'.$task['Type']['name'].'</td>';
                 echo '<td>'.$this->Time->format('d M Y \a\t g:i A',$task['Task']['created']).'</td>';
-                if($this->Session->read('Auth.User')){
-                    echo '<td>'.$this->Html->link('Edit',array('action'=> 'edit',$task['Task']['id'])).'</td>';
-                    echo '<td>'.$this->Form->postLink('Delete',array('action' => 'delete',$task['Task']['id']),array('confirm'=>'Are you sure')).'</td>';
-
-                }
+                echo '<td>'.$this->Html->link('Edit',array('action'=> 'edit',$task['Task']['id'])).'</td>';
+                echo '<td>'.$this->Form->postLink('Delete',array('action' => 'delete',$task['Task']['id']),array('confirm'=>'Are you sure')).'</td>';
 
             }
         }else{
@@ -193,13 +188,11 @@ $(document).ready(function(e){
     <nav>
         <ul class="pagination">
             <?php
-            echo $this->Paginator->prev( '<<', array( 'class' => '', 'tag' => 'li' ), null, array( 'class' => 'disabled', 'tag' => 'li' ),array('tag'=>'span') );
-            echo $this->Paginator->numbers( array( 'tag' => 'li', 'separator' => '', 'currentClass' => 'active', 'currentTag' => 'a' ) );
-            echo $this->Paginator->next( '>>', array( 'class' => '', 'tag' => 'li' ), null, array( 'class' => 'disabled', 'tag' => 'li' ) );
-            echo $this->Js->writeBuffer();
+              echo $this->Paginator->numbers( array( 'tag' => 'li', 'separator' => '', 'currentClass' => 'active', 'currentTag' => 'a' ) );
+              echo $this->Js->writeBuffer();
             ?>
         </ul>
-        <nav>
+    <nav>
 
 </div>
 

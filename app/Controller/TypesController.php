@@ -11,7 +11,6 @@ class TypesController extends AppController {
     public function index(){
 
     }
-
     public function autoCompleteList(){
         $this->layout='ajax';
         $this->autoRender =false;

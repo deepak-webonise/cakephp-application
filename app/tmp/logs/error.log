@@ -12064,3 +12064,482 @@ Stack Trace:
 #6 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest))
 #7 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2014-11-24 15:47:50 Error: [MissingViewException] View file "/var/www/tasksManage.local/public_html/app/View/tasks/listTasks.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/tasksManage.local/public_html/app/View/tasks/listTasks.ctp',
+)
+Request URL: /tasks/add
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(468): View->_getViewFileName('/tasks/listTask...')
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(954): View->render('/tasks/listTask...', 'ajax')
+#2 /var/www/tasksManage.local/public_html/app/Controller/TasksController.php(135): Controller->render('/tasks/listTask...', 'ajax')
+#3 [internal function]: TasksController->add()
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest))
+#7 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-11-24 15:48:13 Error: [MissingViewException] View file "/var/www/tasksManage.local/public_html/app/View/tasks/listTasks.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/tasksManage.local/public_html/app/View/tasks/listTasks.ctp',
+)
+Request URL: /tasks/add
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(468): View->_getViewFileName('/tasks/listTask...')
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(954): View->render('/tasks/listTask...', 'ajax')
+#2 /var/www/tasksManage.local/public_html/app/Controller/TasksController.php(135): Controller->render('/tasks/listTask...', 'ajax')
+#3 [internal function]: TasksController->add()
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(TasksController), Array)
+#5 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest))
+#7 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-11-24 16:17:59 Error: [MissingHelperException] Helper class TaskHelper could not be found.
+Exception Attributes: array (
+  'class' => 'TaskHelper',
+  'plugin' => false,
+)
+Request URL: /tasks/listTasks
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/View/HelperCollection.php(63): HelperCollection->load('Task')
+#1 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(837): HelperCollection->__isset('Task')
+#2 xdebug eval(1): View->__get('Task')
+#3 /var/www/tasksManage.local/public_html/app/View/Tasks/list_tasks.ctp(163): unknown()
+#4 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(948): include('/var/www/tasksM...')
+#5 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(910): View->_evaluate('/var/www/tasksM...', Array)
+#6 /var/www/tasksManage.local/public_html/lib/Cake/View/View.php(471): View->_render('/var/www/tasksM...')
+#7 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(954): View->render(NULL, NULL)
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(198): Controller->render()
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(TasksController), Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
+2014-11-24 16:17:59 Error: Fatal Error (4): syntax error, unexpected ';' in [xdebug eval, line 1]
+2014-11-24 16:17:59 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /tasks/listTasks
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'xdebug eval', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'xdebug eval', 1, Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'xdebug eval', 1, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-24 16:18:56 Error: Fatal Error (4): syntax error, unexpected ';' in [xdebug eval, line 1]
+2014-11-24 16:18:56 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /tasks/listTasks
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'xdebug eval', 1)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'xdebug eval', 1, Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'xdebug eval', 1, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-24 16:41:52 Error: [MissingControllerException] Controller class SearchesController could not be found.
+Exception Attributes: array (
+  'class' => 'SearchesController',
+  'plugin' => NULL,
+)
+Request URL: /searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-24 16:42:29 Error: [MissingControllerException] Controller class SearchesController could not be found.
+Exception Attributes: array (
+  'class' => 'SearchesController',
+  'plugin' => NULL,
+)
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-24 16:49:53 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 16:49:56 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 16:52:35 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 16:53:12 Error: Fatal Error (1): Call to undefined method SearchesController::parsedParams() in [/var/www/tasksManage.local/public_html/app/Controller/SearchesController.php, line 18]
+2014-11-24 16:53:12 Error: [FatalErrorException] Call to undefined method SearchesController::parsedParams()
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/tasksM...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/tasksM...', 18, Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/tasksM...', 18, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-24 16:54:04 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passedArgs' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('passedArgs', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('passedArgs', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('passedArgs', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('passedArgs', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('passedArgs', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->passedArgs(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 16:55:17 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'passedArgs' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('passedArgs', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('passedArgs', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('passedArgs', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('passedArgs', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('passedArgs', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->passedArgs(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 16:55:58 Error: Fatal Error (1): Call to undefined method SearchesController::passedArgs() in [/var/www/tasksManage.local/public_html/app/Controller/SearchesController.php, line 18]
+2014-11-24 16:55:58 Error: [FatalErrorException] Call to undefined method SearchesController::passedArgs()
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/tasksM...', 18)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/tasksM...', 18, Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/tasksM...', 18, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-11-24 16:56:15 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:00:36 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:00:59 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:01:50 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:06:30 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:08:21 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:09:07 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:09:58 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:10:49 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:11:43 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:15:25 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:23:57 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Object(Task), Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:24:21 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria('Task', Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:29:09 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:29:11 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-24 17:29:51 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'parseCriteria' at line 1
+Request URL: /Searches/search
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(458): PDOStatement->execute(Array)
+#1 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(424): DboSource->_execute('parseCriteria', Array)
+#2 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(666): DboSource->execute('parseCriteria', Array, Array)
+#3 /var/www/tasksManage.local/public_html/lib/Cake/Model/Datasource/DboSource.php(609): DboSource->fetchAll('parseCriteria', Array, Array)
+#4 /var/www/tasksManage.local/public_html/lib/Cake/Model/Model.php(808): DboSource->query('parseCriteria', Array, Object(Task))
+#5 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Model->__call('parseCriteria', Array)
+#6 /var/www/tasksManage.local/public_html/app/Controller/SearchesController.php(18): Task->parseCriteria(Array)
+#7 [internal function]: SearchesController->search()
+#8 /var/www/tasksManage.local/public_html/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(SearchesController), Array)
+#9 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#10 /var/www/tasksManage.local/public_html/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(SearchesController), Object(CakeRequest))
+#11 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2014-11-25 10:22:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 10:27:53 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 10:28:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-11-25 10:29:36 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/bootstrap.css.map
+Stack Trace:
+#0 /var/www/tasksManage.local/public_html/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

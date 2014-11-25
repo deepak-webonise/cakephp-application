@@ -117,3 +117,5 @@ CakePlugin::load(array(
         'bootstrap')
     )
 ));
+
+CakePlugin::load(array('Search'));

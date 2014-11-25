@@ -1,6 +1,4 @@
 <?php
-
-
 $cakeDescription = __d('cake_dev', 'Task Management System');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
@@ -46,8 +44,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<?php echo $this->fetch('content'); ?>
 		</div>
 		<div id="footer">
-
-
 
 		</div>
 	</div>
