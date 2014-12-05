@@ -75,7 +75,7 @@ class TasksController extends AppController {
         }
 
         // Setting search options
-        if($this->request->is('post')){
+       /* if($this->request->is('post')){
             $condition = $this->_returnSearchCondition();
             $this->Session->write('pgCondition',$condition);
             $this->paginate = array(
@@ -84,14 +84,24 @@ class TasksController extends AppController {
                 'conditions' => $condition,
                 'order' => 'Task.created desc'
             );
-        }
+        }*/
         if($this->request->is('get')){
+
+            $condition = null;
+            if(isset($this->request->query) && !empty($this->request->query)){
+
+                $condition = $this->_returnSearchCondition($this->request->query['data']['Task']);
+
+            }
+
             $this->paginate = array(
                 'limit' => 5,
                 'fields' => array('Task.id','Task.title','Task.created','Technology.name','Type.name','User.username'),
-                'conditions' => $this->Session->read('pgCondition'),
+                'conditions' => $condition,
                 'order' => 'Task.created desc'
             );
+
+            $this->request->query = $this->request->query;
         }
 
         try{
@@ -205,24 +215,24 @@ class TasksController extends AppController {
      * @return mixed
      * Description : Return user selected criteria for filtering data.
      */
-    public function _returnSearchCondition(){
+    public function _returnSearchCondition($filters = null){
 
         $condition = array();
         $user_id = $this->Auth->user('User.id');
         if($user_id != '1'){
             array_push($condition,'Task.user_id = '.$user_id);
         }
-        if(!empty($this->request->data['Task']['Type'])){
-            array_push( $condition,"Type.name LIKE '%".$this->request->data['Task']['Type']."%'");
+        if(!empty($filters['Type'])){
+            array_push( $condition,"Type.name LIKE '%".$filters['Type']."%'");
         }
-        if(!empty($this->request->data['Task']['Technology'])){
-            array_push($condition,"Technology.name LIKE '%".$this->request->data['Task']['Technology']."%'");
+        if(!empty($filters['Technology'])){
+            array_push($condition,"Technology.name LIKE '%".$filters['Technology']."%'");
         }
-        if(!empty($this->request->data['Task']['created'])){
-            array_push($condition,"Task.created LIKE '".$this->request->data['Task']['created']." %' ");
+        if(!empty($filters['created'])){
+            array_push($condition,"Task.created LIKE '".$filters['created']." %' ");
         }
-        if(!empty($this->request->data['Task']['username'])){
-            array_push($condition,"User.username = '".$this->request->data['Task']['username']."' ");
+        if(!empty($filters['username'])){
+            array_push($condition,"User.username = '".$filters['username']."' ");
         }
         return $condition;
     }

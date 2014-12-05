@@ -103,13 +103,13 @@ echo $this->Html->script('jquery-ui');
 
         $("#SearchForm").submit(function(){
 
-            var type = $.trim($("#TaskType").val());
+            //var type = $.trim($("#TaskType").val());
             var technology = $.trim($('#TaskTechnology').val());
             var created = $.trim($('#TaskCreated').val());
             var username = $.trim($('#TaskUsername').val());
 
 
-            if(type.length === 0 && technology.length === 0 && created === '' && username === ''){
+            if(technology.length === 0 && created === '' && username === ''){
                 alert('Please enter any one field for search');
 
                 return false;
@@ -126,41 +126,44 @@ echo $this->Html->script('jquery-ui');
 
 <h1>List of Tasks</h1>
 
-<div class="col-lg-12 te">
-    <!-- ADD new task form -->
-    <form method="post" id="TaskAddForm" name="TaskAddForm"  action="/tasks/add">
-        <div class=" col-lg-2 form-group">
-            <input name="data[Task][title]" id="TaskTitle" class="form-control" placeholder="Enter Title">
-
-        </div>
-        <div class="col-lg-1 form-group">
-            <input class="btn btn-primary" type="submit" value="Add">
-        </div>
-
-    </form>
+<div class="col-lg-12 ">
 
     <!-- SEARCH FORM -->
-    <form id="SearchForm" name="SearchForm" action="/tasks/adminListTasks" method="post">
-        <div class="col-lg-2 form-group">
-            <input class="form-control" type="text"  name="data[Task][Type]" id="TaskType" placeholder="search by type" autocomplete="off"/>
-        </div>
+    <form id="SearchForm" name="SearchForm" action="/tasks/adminListTasks" method="get">
+      
         <div class="col-lg-2 form-group">
             <input class="form-control" type="text"  name="data[Task][Technology]" id="TaskTechnology" placeholder="search by Technology" autocomplete="off"/>
         </div>
         <div class="col-lg-2 form-group">
-            <input class="form-control" type="text"  name="data[Task][username]" id="TaskUsername" autocomplete="off"/>
+            <input class="form-control" type="text"  name="data[Task][username]" id="TaskUsername" placeholder="search by username" autocomplete="off"/>
         </div>
         <div class="col-lg-2 form-group">
             <input class="form-control" type="date"  name="data[Task][created]" id="TaskCreated" autocomplete="off"/>
         </div>
         <div class="col-lg-2 form-group">
             <input class="btn btn-primary" type="submit" value="Search"/>
-            <a class="resetButton btn-primary" href="/tasks/listTasks">Reset</a>
+            <a class="resetButton btn-primary" href="/tasks/adminListTasks">Reset</a>
         </div>
     </form>
+    <div>
+        <!-- ADD new task form -->
+        <form method="post" id="TaskAddForm" name="TaskAddForm"  action="/tasks/add">
+            <div class=" col-lg-2 form-group">
+                <input name="data[Task][title]" id="TaskTitle" class="form-control" placeholder="Enter Title">
+
+            </div>
+            <div class="col-lg-1 form-group">
+                <input class="btn btn-primary" type="submit" value="Add">
+            </div>
+
+        </form>
+
+    </div>
+
+
 </div>
 <div  class="col-lg-12" >
-    <?php  echo $this->Paginator->options(array('url' => array('sort' => 'created','direction'=>'desc'))); ?>
+    <?php // echo $this->Paginator->options(array('url' => array('sort' => 'created','direction'=>'desc'))); ?>
     <table class="table">
         <tr id="data">
 
@@ -172,7 +175,8 @@ echo $this->Html->script('jquery-ui');
         </tr>
 
         <?php
-        $i = 1;
+       // pr( $_GET['data']['Task']['Technology']);
+
         if(!empty($tasksList)){
             foreach($tasksList as $task){
 
@@ -200,9 +204,12 @@ echo $this->Html->script('jquery-ui');
     <nav>
         <ul class="pagination">
             <?php
+
             echo $this->Paginator->prev( '<<', array( 'class' => '', 'tag' => 'li' ), null, array( 'class' => 'disabled', 'tag' => 'li' ),array('tag'=>'span') );
             echo $this->Paginator->numbers( array( 'tag' => 'li', 'separator' => '', 'currentClass' => 'active', 'currentTag' => 'a' ) );
             echo $this->Paginator->next( '>>', array( 'class' => '', 'tag' => 'li' ), null, array( 'class' => 'disabled', 'tag' => 'li' ) );
+            $this->Paginator->params();
+            $this->Paginator->options();
             echo $this->Js->writeBuffer();
             ?>
         </ul>
